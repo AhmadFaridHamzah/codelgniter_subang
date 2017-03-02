@@ -452,7 +452,7 @@ $config['csrf_protection'] = TRUE;
 $config['csrf_token_name'] = 'mpsjtraning';
 $config['csrf_cookie_name'] = 'mpsjtraning_coco';
 $config['csrf_expire'] = 7200;
-$config['csrf_regenerate'] = TRUE;
+$config['csrf_regenerate'] = false;
 $config['csrf_exclude_uris'] = array();
 
 /*
@@ -521,3 +521,4 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+

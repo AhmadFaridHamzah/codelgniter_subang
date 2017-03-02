@@ -23,8 +23,11 @@
     <script src="<?=base_url('assets/adminlt/js/jquery.js')?>"></script>
     
  <link href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
-  
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <link href="http://www.kfsoft.info/MyTopMessageBar/MyTopMessageBar.css
+   " rel="stylesheet" type="text/css">
+ 
+
+   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -241,7 +244,35 @@
     <script src="<?=base_url('assets/adminlt/js/bootstrap.min.js')?>"></script>
     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="http://www.kfsoft.info/MyTopMessageBar/jquery.MyTopMessageBar.js"></script>
 
+ <?php
+if($this->session->flashdata("msg")!="")
+{ 
+?>
+<script language="javascript">
+$('#element').popover('show');
+$(window).ready(function()
+{
+var message = "<center><?=$this->session->flashdata("msg")?></center>";
+var cssClass = "alert alert-red";
+
+<?php
+if($this->session->flashdata("css_msg")!="")
+{
+?>
+cssClass = "<?=$this->session->flashdata("css_msg")?>";
+
+<?php 
+} 
+?>
+
+$().MyTopMessageBar({message:message, cssClass:cssClass, bFading:true});
+});
+</script>
+<?php
+}
+?>
 
 
 </body>

@@ -62,6 +62,23 @@ class M_employee extends CI_Model {
 		}
 
 
+		public function insertEmployee($data){
+
+			$this->db->insert('employees',$data);
+			$insertid=$this->db->insert_id();
+			
+			if($insertid){
+				return $insertid;
+			}else{
+				return false;
+			}
+			
+
+
+
+		}
+
+
 
 
 }
